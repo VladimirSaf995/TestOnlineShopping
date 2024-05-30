@@ -14,5 +14,4 @@ class BasePage:
             # Wait until the element specified by the locator is present on the page
             return self.wait.until(EC.presence_of_element_located(locator))
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle the case when the element is not found within the specified timeout
             print(f"Element: {locator}. Error: {e}")

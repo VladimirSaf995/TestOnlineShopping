@@ -19,7 +19,6 @@ class ItemDetailsPage(BasePage):
             element = self.wait_for_element((By.CSS_SELECTOR, '.add-to-cart'))
             return element.is_displayed()
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle exceptions if the element is not found or timeout occurs
             print(f"Error: {e}")
             return False
 
@@ -29,5 +28,4 @@ class ItemDetailsPage(BasePage):
             add_to_cart_button = self.wait_for_element((By.CSS_SELECTOR, '.add-to-cart'))
             add_to_cart_button.click()
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle exceptions if the button is not found or timeout occurs
             print(f"Error: {e}")

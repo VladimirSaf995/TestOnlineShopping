@@ -18,7 +18,6 @@ class HomePage(BasePage):
             search_field.send_keys(item_name)
             search_field.submit()
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle exceptions if the search field is not found or timeout occurs
             print(f"Error: {e}")
 
     def browse_items(self):
@@ -27,5 +26,4 @@ class HomePage(BasePage):
             browse_button = self.wait_for_element((By.ID, 'browse-items-button'))
             browse_button.click()
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle exceptions if the browse button is not found or timeout occurs
             print(f"Error: {e}")

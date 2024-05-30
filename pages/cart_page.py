@@ -11,7 +11,6 @@ class CartPage(BasePage):
             element = self.wait_for_element((By.CSS_SELECTOR, '.cart-confirmation-product'))
             return element.is_displayed()
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle the case when the element is not found or timeout occurs
             print(f"Error: {e}")
             return False
 
@@ -21,6 +20,5 @@ class CartPage(BasePage):
             element = self.wait_for_element((By.CSS_SELECTOR, '.items-list'))
             return element.is_displayed()
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle the case when the element is not found or timeout occurs
             print(f"Error: {e}")
             return False

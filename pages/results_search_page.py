@@ -11,7 +11,6 @@ class SearchResultsPage(BasePage):
             element = self.wait_for_element((By.CSS_SELECTOR, '.search-results-product'))
             return element.is_displayed()
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle exceptions if the element is not found or timeout occurs
             print(f"Error: {e}")
             return False
 
@@ -21,7 +20,6 @@ class SearchResultsPage(BasePage):
             element = self.wait_for_element((By.CSS_SELECTOR, '.empty-search-results-product'))
             return element.is_displayed()
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle exceptions if the element is not found or timeout occurs
             print(f"Error: {e}")
             return False
 
@@ -31,5 +29,4 @@ class SearchResultsPage(BasePage):
             first_item = self.wait_for_element((By.CSS_SELECTOR, '.search-results-product .item'))
             first_item.click()
         except (TimeoutException, NoSuchElementException) as e:
-            # Handle exceptions if the element is not found or timeout occurs
             print(f"Error: {e}")
